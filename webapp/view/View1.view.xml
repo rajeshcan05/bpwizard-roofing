@@ -1,0 +1,425 @@
+<!-- <mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page title="Select Business Partner Template">
+        <content>
+            <Table id="bpTable" 
+                   items="{path: '/A_BusinessPartner', parameters: {$top: 20}}" 
+                   mode="SingleSelectMaster" 
+                   selectionChange="onSelectionChange">
+                <columns>
+                    <Column><Text text="ID" /></Column>
+                    <Column><Text text="Category" /></Column>
+                    <Column><Text text="Full Name" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onSelectionChange">
+                        <cells>
+                            <Text text="{BusinessPartner}" />
+                            <Text text="{BusinessPartnerCategory}" />
+                            <Text text="{BusinessPartnerFullName}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View> -->
+
+<!-- <mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <Page title="Select Business Partner Template">
+        <content>
+            
+            <fb:FilterBar id="filterBar" search="onSearch" showClearOnFB="true" clear="onClear" useToolbar="false">
+                <fb:filterGroupItems>
+                    <fb:FilterGroupItem groupName="G1" name="ID" label="Business Partner ID" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterID" placeholder="Enter ID..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    
+                    <fb:FilterGroupItem groupName="G1" name="Category" label="Category" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterCategory" placeholder="Enter Category..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    
+                    <fb:FilterGroupItem groupName="G1" name="Name" label="Full Name" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterName" placeholder="Enter Name..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+
+            <Table id="bpTable" 
+                   items="{path: '/A_BusinessPartner'}" 
+                   mode="SingleSelectMaster" 
+                   selectionChange="onSelectionChange"
+                   growing="true"
+                   growingThreshold="100"
+                   growingScrollToLoad="false">
+                
+                <columns>
+                    <Column><Text text="Business Partner" /></Column>
+                    <Column><Text text="Category" /></Column>
+                    <Column><Text text="Full Name" /></Column>
+                    <Column><Text text="Grouping" /></Column>
+                    <Column><Text text="Created User" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onSelectionChange">
+                        <cells>
+                            <Text text="{BusinessPartner}" />
+                            <Text text="{BusinessPartnerCategory}" />
+                            <Text text="{BusinessPartnerFullName}" />
+                            <Text text="{BusinessPartnerGrouping}" />
+                            <Text text="{CreatedByUser}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            
+        </content>
+    </Page>
+</mvc:View> -->
+
+
+<!-- 
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page title="Select Business Partner Template" class="sapUiContentPadding">
+        <content>
+            
+            <fb:FilterBar id="filterBar" 
+                          search="onSearch" 
+                          showClearOnFB="true" 
+                          clear="onClear" 
+                          useToolbar="false">
+                <fb:filterGroupItems>
+
+                    <fb:FilterGroupItem groupName="G1" name="ID" label="Business Partner ID" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterID" placeholder="Enter ID..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+
+                    <fb:FilterGroupItem groupName="G1" name="Category" label="Category" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterCategory" placeholder="Enter Category..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+
+                    <fb:FilterGroupItem groupName="G1" name="Name" label="Full Name" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterName" placeholder="Enter Name..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+
+                    <fb:FilterGroupItem groupName="G1" name="Role" label="Business Partner Role" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="filterRole" placeholder="Enter Role..." />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+
+            <Table id="bpTable"
+                   items="{
+                        path: '/A_BusinessPartner',
+                        parameters: {
+                            expand: 'to_BusinessPartnerRole'
+                        }
+                   }"
+                   mode="SingleSelectMaster"
+                   selectionChange="onSelectionChange"
+                   growing="true"
+                   growingThreshold="100"
+                   class="sapUiResponsiveMargin"> <columns>
+                    <Column width="25%"><Text text="Business Partner" /></Column>
+                    <Column width="10%" hAlign="Center"><Text text="Category" /></Column>
+                    <Column width="15%"><Text text="Grouping" /></Column>
+                    <Column width="15%"><Text text="Created User" /></Column>
+                    <Column width="35%"><Text text="Role" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Navigation" press="onSelectionChange">
+                        <cells>
+                            
+                            <ObjectIdentifier 
+                                title="{BusinessPartnerFullName}" 
+                                text="ID: {BusinessPartner}" />
+
+                            <ObjectStatus 
+                                text="{BusinessPartnerCategory}" 
+                                state="Success" 
+                                inverted="true" />
+
+                            <Text text="{BusinessPartnerGrouping}" />
+                            <Text text="{CreatedByUser}" />
+
+                            <HBox items="{path: 'to_BusinessPartnerRole', templateShareable: false}" wrap="Wrap">
+                                <ObjectStatus 
+                                    text="{BusinessPartnerRole}" 
+                                    state="{
+                                        path: 'BusinessPartnerRole',
+                                        formatter: '.formatRoleColor'
+                                    }" 
+                                    inverted="true" 
+                                    class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+                            </HBox>
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </content>
+    </Page>
+</mvc:View> -->
+
+
+<!-- <mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <f:DynamicPage id="dynamicPageId" headerExpanded="true" toggleHeaderOnTitleClick="true" class="sapUiSizeCompact">
+        
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Business Partner Directory" level="H2"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Text text="Search and select a partner to initiate the data template wizard." class="sapUiSmallMarginBottom"/>
+                </f:expandedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <fb:FilterBar id="filterBar" search="onSearch" showClearOnFB="true" clear="onClear" useToolbar="false">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem groupName="G1" name="ID" label="Comapny Code" visibleInFilterBar="true">
+                            <fb:control><Input id="filterID" placeholder="e.g. 100458..." /></fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem groupName="G1" name="Category" label="Category" visibleInFilterBar="true">
+                            <fb:control><Input id="filterCategory" placeholder="Enter Category..." /></fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem groupName="G1" name="Name" label="Sales Area" visibleInFilterBar="true">
+                            <fb:control><Input id="filterName" placeholder="Enter Name..." /></fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem groupName="G1" name="Role" label="BP Role" visibleInFilterBar="true">
+                            <fb:control><Input id="filterRole" placeholder="e.g. FLCU00..." /></fb:control>
+                        </fb:FilterGroupItem>
+                    </fb:filterGroupItems>
+                </fb:FilterBar>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <Table id="bpTable"
+                   items="{
+                        path: '/A_BusinessPartner',
+                        parameters: { expand: 'to_BusinessPartnerRole' }
+                   }"
+                   mode="SingleSelectMaster"
+                   selectionChange="onSelectionChange"
+                   growing="true"
+                   growingThreshold="100"
+                   class="myFloatingTable sapUiResponsiveMargin"> 
+
+                <headerToolbar>
+                    <OverflowToolbar style="Clear">
+                        <Title id="tableTitle" text="Available Partners" level="H3" class="sapUiSmallMarginBegin"/>
+                        <ToolbarSpacer />
+                        <Button icon="sap-icon://sort" type="Transparent" tooltip="Sort Data" />
+                        <Button icon="sap-icon://excel-attachment" type="Transparent" tooltip="Export to Excel" />
+                        <Button icon="sap-icon://action-settings" type="Transparent" tooltip="Table Settings" />
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <noData>
+                    <IllustratedMessage 
+                        illustrationType="sapIllus-EmptyList" 
+                        title="No Partners Found" 
+                        description="Try adjusting your search filters above."/>
+                </noData>
+
+                <columns>
+                    <Column width="30%"><Text text="Business Partner Details" /></Column>
+                    <Column width="15%" hAlign="Center"><Text text="Category" /></Column>
+                    <Column width="10%"><Text text="Grouping" /></Column>
+                    <Column width="15%"><Text text="Created By" /></Column>
+                    <Column width="30%"><Text text="Assigned Roles" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Navigation" press="onSelectionChange">
+                        <cells>
+                            
+                            <ObjectIdentifier title="{BusinessPartnerFullName}" text="ID: {BusinessPartner}" />
+
+                            <ObjectStatus 
+                                text="{ path: 'BusinessPartnerCategory', formatter: '.formatCategoryText' }" 
+                                icon="{ path: 'BusinessPartnerCategory', formatter: '.formatCategoryIcon' }"
+                                state="Success" 
+                                inverted="true" />
+
+                            <Text text="{BusinessPartnerGrouping}" />
+                            
+                            <HBox alignItems="Center">
+                                <Avatar src="sap-icon://person-placeholder" displaySize="XS" class="sapUiTinyMarginEnd" />
+                                <Text text="{CreatedByUser}" />
+                            </HBox>
+
+                            <HBox items="{path: 'to_BusinessPartnerRole', templateShareable: false}" wrap="Wrap">
+                                <ObjectStatus 
+                                    text="{BusinessPartnerRole}" 
+                                    state="{ path: 'BusinessPartnerRole', formatter: '.formatRoleColor' }" 
+                                    inverted="true" 
+                                    class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+                            </HBox>
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View> -->
+
+
+
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <f:DynamicPage id="dynamicPageId" headerExpanded="true" toggleHeaderOnTitleClick="true" class="sapUiSizeCompact">
+        
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Business Partner Directory" level="H2"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Text text="Search and select a partner to initiate the data template wizard." class="sapUiSmallMarginBottom"/>
+                </f:expandedContent>
+                
+                <f:actions>
+                    <Button text="Create Template" type="Accept" press="onCreateTemplate" />
+                </f:actions>
+
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <fb:FilterBar id="filterBar" search="onSearch" showClearOnFB="true" clear="onClear" useToolbar="false">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem groupName="G1" name="ID" label="Company Code" visibleInFilterBar="true">
+                            <fb:control><Input id="filterID" placeholder="e.g. 100458..." /></fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem groupName="G1" name="Category" label="Category" visibleInFilterBar="true">
+                            <fb:control><Input id="filterCategory" placeholder="Enter Category..." /></fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem groupName="G1" name="Name" label="Sales Area" visibleInFilterBar="true">
+                            <fb:control><Input id="filterName" placeholder="Enter Name..." /></fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem groupName="G1" name="Role" label="BP Role" visibleInFilterBar="true">
+                            <fb:control><Input id="filterRole" placeholder="e.g. FLCU00..." /></fb:control>
+                        </fb:FilterGroupItem>
+                    </fb:filterGroupItems>
+                </fb:FilterBar>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <Table id="bpTable"
+                   items="{
+                        path: '/A_BusinessPartner',
+                        parameters: { expand: 'to_BusinessPartnerRole' }
+                   }"
+                   mode="SingleSelectMaster"
+                   selectionChange="onSelectionChange"
+                   growing="true"
+                   growingThreshold="100"
+                   class="myFloatingTable sapUiResponsiveMargin"> 
+
+                <headerToolbar>
+                    <OverflowToolbar style="Clear">
+                        <Title id="tableTitle" text="Available Partners" level="H3" class="sapUiSmallMarginBegin"/>
+                        <ToolbarSpacer />
+                        <Button icon="sap-icon://sort" type="Transparent" tooltip="Sort Data" />
+                        <Button icon="sap-icon://excel-attachment" type="Transparent" tooltip="Export to Excel" />
+                        <Button icon="sap-icon://action-settings" type="Transparent" tooltip="Table Settings" />
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <noData>
+                    <IllustratedMessage 
+                        illustrationType="sapIllus-EmptyList" 
+                        title="No Partners Found" 
+                        description="Try adjusting your search filters above."/>
+                </noData>
+
+                <columns>
+                    <Column width="30%"><Text text="Business Partner Details" /></Column>
+                    <Column width="15%" hAlign="Center"><Text text="Category" /></Column>
+                    <Column width="10%"><Text text="Grouping" /></Column>
+                    <Column width="15%"><Text text="Created By" /></Column>
+                    <Column width="30%"><Text text="Assigned Roles" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Navigation" press="onSelectionChange">
+                        <cells>
+                            <ObjectIdentifier title="{BusinessPartnerFullName}" text="ID: {BusinessPartner}" />
+
+                            <ObjectStatus 
+                                text="{ path: 'BusinessPartnerCategory', formatter: '.formatCategoryText' }" 
+                                icon="{ path: 'BusinessPartnerCategory', formatter: '.formatCategoryIcon' }"
+                                state="Success" 
+                                inverted="true" />
+
+                            <Text text="{BusinessPartnerGrouping}" />
+                            
+                            <HBox alignItems="Center">
+                                <Avatar src="sap-icon://person-placeholder" displaySize="XS" class="sapUiTinyMarginEnd" />
+                                <Text text="{CreatedByUser}" />
+                            </HBox>
+
+                            <HBox items="{path: 'to_BusinessPartnerRole', templateShareable: false}" wrap="Wrap">
+                                <ObjectStatus 
+                                    text="{BusinessPartnerRole}" 
+                                    state="{ path: 'BusinessPartnerRole', formatter: '.formatRoleColor' }" 
+                                    inverted="true" 
+                                    class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

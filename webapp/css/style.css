@@ -1,0 +1,112 @@
+/* 1. Makes the whole page background gray so the white box stands out */
+.pageGrayBackground {
+    background-color: #f2f2f2 !important;
+}
+
+/* 2. Forces the container to take up the whole screen area for centering */
+.fullScreenCenterBox {
+    height: 100% !important;
+    width: 100% !important;
+    padding: 2rem; /* Keeps it from touching the absolute edges of the screen */
+    box-sizing: border-box;
+}
+
+/* 3. THIS IS YOUR RED SQUARE. It forces the 80% width and 75% height. */
+.wizardRedBoxFrame {
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 1rem auto !important; /* Centers the box nicely */
+    background-color: #ffffff !important;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08) !important; 
+    border-radius: 12px !important; 
+    overflow: hidden !important; 
+    border: 1px solid #e4e9f2; 
+}
+/* 4. Forces the Wizard itself to fill the red square */
+.wizardRedBoxFrame .sapMWizard {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+/* Gives the table a premium SaaS floating card look */
+.myFloatingTable {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10) !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    overflow: hidden !important;
+    margin-top: 1rem !important;
+}
+/* Adds a subtle gradient to the page header for a modern touch */
+.sapFDynamicPageTitle {
+    background: linear-gradient(to right, #f4f7f9, #ffffff) !important;
+    border-bottom: 1px solid #e4e9f2 !important;
+}
+
+/* 2. Smooth transition for the hover effect */
+.myFloatingTable tbody tr {
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* 3. The light blue hover highlight */
+.myFloatingTable tbody tr:hover {
+    background-color: #f0f5fb !important; 
+    transform: scale(1.002); 
+    cursor: pointer;
+}
+
+/* 4. Optional: Makes the bold names pop a bit more */
+.sapMObjectIdentifierTitle {
+    color: #1a2b3c !important; 
+    font-size: 1.1rem !important;
+}
+
+
+/* 1. Page Background */
+.pageGrayBackground {
+    background-color: #f4f7f9 !important; 
+}
+/* 2. Container */
+.fullScreenCenterBox {
+    height: 100% !important;
+    width: 100% !important;
+    padding: 2rem; 
+    box-sizing: border-box;
+}
+
+/* 3. The Wizard Floating Card */
+.wizardRedBoxFrame {
+    position: relative !important; 
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 1rem auto !important; 
+    background-color: #ffffff !important;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08) !important; 
+    border-radius: 12px !important; 
+    overflow: hidden !important; 
+    border: 1px solid #e4e9f2; 
+}
+
+.topRightLoader {
+    position: absolute !important;
+    top: 1.5rem !important;
+    right: 2rem !important;
+    z-index: 10 !important;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 4. Make sure wizard fills the card */
+.wizardRedBoxFrame .sapMWizard {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/* 5. Loader styling - makes the spinner prominent and uses primary SAP blue */
+.wizardRedBoxFrame .sapUiLocalBusyIndicator {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
