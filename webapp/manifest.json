@@ -1,7 +1,7 @@
 {
   "_version": "1.53.0",
   "sap.app": {
-    "id": "project1",
+    "id": "bpwizard-roofing",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -12,7 +12,7 @@
     "resources": "resources.json",
     "crossNavigation": {
       "inbounds": {
-        "project1-display": {
+        "bpwizard-roofing-display": {
           "semanticObject": "BusinessPartner",
           "action": "create",
           "title": "Business Partner Wizard",
@@ -90,7 +90,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "project1.i18n.i18n"
+          "bundleName": "bpwizard-roofing.i18n.i18n"
         }
       },
       "": {
@@ -113,7 +113,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "project1.view",
+        "viewPath": "bpwizard-roofing.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -148,7 +148,7 @@
       }
     },
     "rootView": {
-      "viewName": "project1.view.App",
+      "viewName": "bpwizard-roofing.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
@@ -156,6 +156,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "project1"
+    "service": "bpwizard-roofing"
   }
 }

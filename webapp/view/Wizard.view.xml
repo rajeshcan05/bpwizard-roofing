@@ -1,4 +1,4 @@
-<!-- <mvc:View controllerName="project1.controller.Wizard"
+<!-- <mvc:View controllerName="bpwizard-roofing.controller.Wizard"
     xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
     <Page title="Review &amp; Submit BP" showNavButton="true" navButtonPress="onNavBack">
         <content>
@@ -88,7 +88,7 @@
 </mvc:View> -->
 
 <!-- 
-<mvc:View controllerName="project1.controller.Wizard"
+<mvc:View controllerName="bpwizard-roofing.controller.Wizard"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m" 
     xmlns:form="sap.ui.layout.form"
@@ -189,7 +189,7 @@
 
 
 
-<mvc:View controllerName="project1.controller.Wizard"
+<mvc:View controllerName="bpwizard-roofing.controller.Wizard"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m" 
     xmlns:f="sap.f"

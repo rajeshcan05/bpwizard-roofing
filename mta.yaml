@@ -1,5 +1,5 @@
 _schema-version: "3.2"
-ID: project1
+ID: bpwizard-roofing
 version: 0.0.1
 
 parameters:
@@ -10,7 +10,7 @@ modules:
   # ---------------------
   # 1. UI Module
   # ---------------------
-  - name: project1
+  - name: bpwizard-roofing
     type: html5
     path: .
     build-parameters:
@@ -24,78 +24,78 @@ modules:
   # ---------------------
   # 2. App Content Module
   # ---------------------
-  - name: project1-app-content
+  - name: bpwizard-roofing-app-content
     type: com.sap.application.content
     path: .
     requires:
-      - name: project1-repo-host
+      - name: bpwizard-roofing-repo-host
         parameters:
           content-target: true
     build-parameters:
       build-result: resources
       requires:
-        - name: project1
+        - name: bpwizard-roofing
           artifacts:
-            - project1.zip
+            - bpwizard-roofing.zip
           target-path: resources/
 
   # ---------------------
   # 3. Destination Content Module
   # ---------------------
-  - name: project1-destination-content
+  - name: bpwizard-roofing-destination-content
     type: com.sap.application.content
     path: .
     requires:
-      - name: project1-dest-srv
+      - name: bpwizard-roofing-dest-srv
         parameters:
           content-target: true
-      - name: project1-repo-host
+      - name: bpwizard-roofing-repo-host
         parameters:
           service-key:
-            name: project1-repo-host-key
-      - name: project1-uaa
+            name: bpwizard-roofing-repo-host-key
+      - name: bpwizard-roofing-uaa
         parameters:
           service-key:
-            name: project1-uaa-key
+            name: bpwizard-roofing-uaa-key
     parameters:
       content:
         instance:
           destinations:
-            - Name: project1_html_repo_host
-              ServiceInstanceName: project1-html5-service
-              ServiceKeyName: project1-repo-host-key
-              sap.cloud.service: project1
+            - Name: bpwizard-roofing_html_repo_host
+              ServiceInstanceName: bpwizard-roofing-html5-service
+              ServiceKeyName: bpwizard-roofing-repo-host-key
+              sap.cloud.service: bpwizard-roofing
             - Authentication: OAuth2UserTokenExchange
-              Name: project1_uaa
-              ServiceInstanceName: project1-xsuaa-service
-              ServiceKeyName: project1-uaa-key
-              sap.cloud.service: project1
+              Name: bpwizard-roofing_uaa
+              ServiceInstanceName: bpwizard-roofing-xsuaa-service
+              ServiceKeyName: bpwizard-roofing-uaa-key
+              sap.cloud.service: bpwizard-roofing
           existing_destinations_policy: update
     build-parameters:
       no-source: true
 
 resources:
-  - name: project1-repo-host
+  - name: bpwizard-roofing-repo-host
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
       service-plan: app-host
-      service-name: project1-html5-service
+      service-name: bpwizard-roofing-html5-service
 
-  - name: project1-uaa
+  - name: bpwizard-roofing-uaa
     type: org.cloudfoundry.managed-service
     parameters:
       path: ./xs-security.json
       service: xsuaa
       service-plan: application
-      service-name: project1-xsuaa-service
+      service-name: bpwizard-roofing-xsuaa-service
 
-  - name: project1-dest-srv
+  - name: bpwizard-roofing-dest-srv
     type: org.cloudfoundry.managed-service
     parameters:
       service: destination
       service-plan: lite
-      service-name: project1-destination-service
+      service-name: bpwizard-roofing-destination-service
       config:
         HTML5Runtime_enabled: true
         init_data:

@@ -8,7 +8,7 @@
 |**Template Used**<br>Basic V2|
 |**Service Type**<br>SAP System (ABAP On-Premise)|
 |**Service URL**<br>http://s4hana23.expertsoft.in:50000/sap/opu/odata/sap/API_BUSINESS_PARTNER|
-|**Module Name**<br>project1|
+|**Module Name**<br>bpwizard-roofing|
 |**Application Title**<br>App Title|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
@@ -16,7 +16,7 @@
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
 
-## project1
+## bpwizard-roofing
 
 An SAP Fiori application.
 

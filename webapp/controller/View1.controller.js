@@ -4,7 +4,7 @@
 //     function (Controller) {
 //         "use strict";
 
-//         return Controller.extend("project1.controller.View1", {
+//         return Controller.extend("bpwizard-roofing.controller.View1", {
 //             onInit: function () {
 //             },
 
@@ -32,7 +32,7 @@
 // ], function (Controller, Filter, FilterOperator) {
 //     "use strict";
 
-//     return Controller.extend("project1.controller.View1", {
+//     return Controller.extend("bpwizard-roofing.controller.View1", {
 //         onInit: function () {
 //         },
 
@@ -98,7 +98,7 @@
 // ], function (Controller, Filter, FilterOperator) {
 //     "use strict";
 
-//     return Controller.extend("project1.controller.View1", {
+//     return Controller.extend("bpwizard-roofing.controller.View1", {
 
 //         onInit: function () {
 //         },
@@ -194,7 +194,7 @@
 // ], function (Controller, Filter, FilterOperator) {
 //     "use strict";
 
-//     return Controller.extend("project1.controller.View1", {
+//     return Controller.extend("bpwizard-roofing.controller.View1", {
 
 //         onInit: function () {
 //         },
@@ -300,7 +300,7 @@ sap.ui.define([
 ], function (Controller, Filter, FilterOperator, MessageBox) {
     "use strict";
 
-    return Controller.extend("project1.controller.View1", {
+    return Controller.extend("bpwizard-roofing.controller.View1", {
 
         onInit: function () {
         },

@@ -17,7 +17,7 @@
     {
       "source": "^/sap/(.*)$",
       "target": "/sap/$1",
-      "destination": "devlb",
+      "destination": "P23_S4HANA",
       "authenticationType": "xsuaa",
       "csrfProtection": false
     },

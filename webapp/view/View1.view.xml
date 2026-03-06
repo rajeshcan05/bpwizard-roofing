@@ -1,4 +1,4 @@
-<!-- <mvc:View controllerName="project1.controller.View1"
+<!-- <mvc:View controllerName="bpwizard-roofing.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Page title="Select Business Partner Template">
         <content>
@@ -25,7 +25,7 @@
     </Page>
 </mvc:View> -->
 
-<!-- <mvc:View controllerName="project1.controller.View1"
+<!-- <mvc:View controllerName="bpwizard-roofing.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m"
     xmlns:fb="sap.ui.comp.filterbar"
@@ -90,7 +90,7 @@
 
 
 <!-- 
-<mvc:View controllerName="project1.controller.View1"
+<mvc:View controllerName="bpwizard-roofing.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m"
     xmlns:fb="sap.ui.comp.filterbar"
@@ -191,7 +191,7 @@
 </mvc:View> -->
 
 
-<!-- <mvc:View controllerName="project1.controller.View1"
+<!-- <mvc:View controllerName="bpwizard-roofing.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m"
     xmlns:f="sap.f"
@@ -307,7 +307,7 @@
 
 
 
-<mvc:View controllerName="project1.controller.View1"
+<mvc:View controllerName="bpwizard-roofing.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m"
     xmlns:f="sap.f"

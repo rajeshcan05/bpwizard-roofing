@@ -6,7 +6,7 @@
 // ], function (Controller, JSONModel, MessageToast, MessageBox) {
 //     "use strict";
 
-//     return Controller.extend("project1.controller.Wizard", {
+//     return Controller.extend("bpwizard-roofing.controller.Wizard", {
 
 //         onInit: function () {
 //             // Initialize local JSON model
@@ -133,7 +133,7 @@
 // ], function (Controller, JSONModel, MessageToast, MessageBox) {
 //     "use strict";
 
-//     return Controller.extend("project1.controller.Wizard", {
+//     return Controller.extend("bpwizard-roofing.controller.Wizard", {
 
 //         onInit: function () {
 //             var oViewModel = new JSONModel({
@@ -251,7 +251,7 @@ sap.ui.define([
 ], function (Controller, JSONModel, MessageToast, MessageBox, BusyDialog) {
     "use strict";
 
-    return Controller.extend("project1.controller.Wizard", {
+    return Controller.extend("bpwizard-roofing.controller.Wizard", {
 
         onInit: function () {
             var oViewModel = new JSONModel({
